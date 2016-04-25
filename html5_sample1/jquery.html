@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" />
     <title>jQueryファイルの読み込み - jQueryプラグインまとめのカルマ</title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
-            alert("jQueryファイルの読み込み完了でーす。");
-        });
+    $(document).ready(function() {
+        alert("jQueryファイルの読み込み完了でーす。");
+    });
+
+    function clickFunc() {
+        $("div").text("CLICK !");
+    }
+    function mouseOverFunc() {
+        $("div").css("background-color", "#F93");
+    }
+    function mouseOutFunc() {
+        $("div").css("background-color", "#09C");
+    }
+
+    $(function() {
+        $("div").on("click", clickFunc);
+        $("div").on("mouseover", mouseOverFunc);
+        $("div").on("mouseout", mouseOutFunc);
+    });
+
+
     </script>
 </head>
+
 <body>
     <h1>jQueryファイルの読み込みでーす。</h1>
+    <div>
+        クリックイベント
+    </div>
 </body>
+
 </html>
