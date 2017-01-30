@@ -9,11 +9,36 @@
     $(document).ready(function() {
         alert("jQueryファイルの読み込み完了でーす。");
     });
+
+    function clickFunc() {
+        $("div").text("CLICK !");
+    }
+    function mouseOverFunc() {
+        $("div").css("background-color", "#F93");
+        h1change();
+    }
+    function mouseOutFunc() {
+        $("div").css("background-color", "#09C");
+    }
+
+    $(function() {
+        $("div").on("click", clickFunc);
+        $("div").on("mouseover", mouseOverFunc);
+        $("div").on("mouseout", mouseOutFunc);
+    });
+
+    function h1change(){
+    	$("h1").css("padding", "20px 20px 20px 20px");
+    }
+
     </script>
 </head>
 
 <body>
     <h1>jQueryファイルの読み込みでーす。</h1>
+    <div>
+        クリックイベント
+    </div>
 </body>
 
 </html>
